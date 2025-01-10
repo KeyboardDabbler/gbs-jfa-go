@@ -170,7 +170,7 @@ $(CSS_FULLTARGET): $(TYPESCRIPT_TARGET) $(VARIANTS_TARGET) $(ALL_CSS_SRC) $(wild
 	$(info copying fonts)
 	cp -r node_modules/remixicon/fonts/remixicon.css node_modules/remixicon/fonts/remixicon.woff2 $(DATA)/web/css/
 	$(info bundling css)
-	$(ESBUILD) --bundle css/base.css --outfile=$(CSS_TARGET) --external:remixicon.css --external:../fonts/hanken* --minify
+	$(ESBUILD) --bundle css/base.css --outfile=$(CSS_TARGET) --external:remixicon.css --external:../fonts/hanken* --external:../fonts/inter* --minify
 
 	npx tailwindcss -i $(CSS_TARGET) -o $(CSS_FULLTARGET) $(TAILWIND)
 	rm $(CSS_TARGET)
