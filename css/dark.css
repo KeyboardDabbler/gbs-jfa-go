@@ -1,5 +1,11 @@
 :root {
     font-family: 'Inter', sans-serif !important;
+
+    --darkerGradientPoint: #111827;
+    --darkerGradientPointAlpha: rgba(17, 24, 39, 0.85);
+    --lighterGradientPoint: #1d2635;
+    
+    --bg-dark: linear-gradient(to bottom, var(--darkerGradientPointAlpha), var(--lighterGradientPoint));
 }
 
 .error-message {
