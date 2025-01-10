@@ -1,6 +1,6 @@
 # Use this instead if hrfee/jfa-go-build-docker doesn't support your architecture
 # FROM --platform=$BUILDPLATFORM golang:latest AS support
-FROM --platform=$BUILDPLATFORM docker.io/hrfee/jfa-go-build-docker:latest AS support
+FROM --platform=$BUILDPLATFORM ghcr.io/keyboarddabbler/jfa-go-build-docker:latest AS support
 # FROM --platform=$BUILDPLATFORM jfa-go-bd AS support
 ARG BUILT_BY
 ENV JFA_GO_BUILT_BY=$BUILT_BY
