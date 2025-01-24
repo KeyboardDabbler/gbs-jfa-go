@@ -68,11 +68,11 @@
                     <input type="text" class="col sm field ~neutral @low input" id="pwr-address" placeholder="username | example@example.com | user#1234 | @user:host | @username">
                 </div>
                 {{ if .linkResetEnabled }}
-                    <span class="button ~info @low full-width center mt-4" id="pwr-submit">
+                    <span class="button emby-button submit-button ~info @low full-width center mt-4" id="pwr-submit">
                         {{ .strings.submit }}
                     </span>
                 {{ else }}
-                    <a class="button ~info @low full-width center mt-4" href="{{ .jfLink }}" target="_blank">{{ .strings.continue }}</a>
+                    <a class="button emby-button button-submit ~info @low full-width center mt-4" href="{{ .jfLink }}" target="_blank">{{ .strings.continue }}</a>
                 {{ end }}
             </div>
         </div>
@@ -85,9 +85,9 @@
                 <div class="flex flex-row gap-2">
                     {{ template "lang-select.html" . }}
                     <span class="hidden button ~warning h-min" alt="{{ .strings.theme }}" id="button-theme"><i class="ri-sun-line"></i></span>
-                    <span class="button ~critical @low mb-4 unfocused" id="logout-button">{{ .strings.logout }}</span>
+                    <span class="button emby-button ~critical @low mb-4 unfocused" id="logout-button">{{ .strings.logout }}</span>
                 </div>
-                <a class="button ~info unfocused h-min" href="/" id="admin-back-button"><i class="ri-arrow-left-fill mr-2"></i>{{ .strings.admin }}</a>
+                <a class="button emby-button ~info unfocused h-min" href="/" id="admin-back-button"><i class="ri-arrow-left-fill mr-2"></i>{{ .strings.admin }}</a>
             </div>
             <div class="card @low dark:~d_neutral mb-4" id="card-user">
                 <span class="heading mb-2"></span>
@@ -126,7 +126,7 @@
 
                                 <label class="label supra" for="user-reenter-password">{{ .strings.reEnterPassword }}</label>
                                 <input type="password" class="input ~neutral @low mt-2 mb-4" placeholder="{{ .strings.password }}" id="user-reenter-new-password" aria-label="{{ .strings.reEnterPassword }}">
-                                <span class="button ~info @low full-width center mt-4" id="user-password-submit">
+                                <span class="button emby-button button-submit ~info @low full-width center mt-4" id="user-password-submit">
                                     {{ .strings.changePassword }}
                                 </span>
                             </div>
@@ -145,13 +145,16 @@
                         <div class="card @low dark:~d_neutral unfocused" id="card-referrals">
                             <span class="heading mb-2">{{ .strings.referrals }}</span>
                             <aside class="aside ~neutral my-4 col user-referrals-description"></aside>
-                            <div class="flex flex-row justify-between gap-2">
+                            <div class="flex flex-col gap-4">
                                 <div class="user-referrals-info"></div>
-                                <div class="grid my-2">
-                                    <button type="button" class="user-referrals-button button ~info dark:~d_info @low" title="Copy">{{ .strings.copyReferral }}<i class="ri-file-copy-line ml-2"></i></button>
+                                <div class="grid">
+                                    <button type="button" class="user-referrals-button button emby-button button-submit ~info dark:~d_info @low w-full" title="Copy">
+                                        {{ .strings.copyReferral }}
+                                        <i class="ri-file-copy-line ml-2"></i>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
                 {{ end }}
             </div>
