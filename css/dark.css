@@ -9,6 +9,10 @@
     scrollbar-color: #3b3b3b #202020;
 }
 
+#lang-dropdown {
+    display: hidden !important;
+}
+
 .dark body {
     background-color: #131b2a !important;
 }
@@ -23,8 +27,27 @@
     font-weight: 800 !important;
 }
 
+#modal-login.modal {
+    background-color: #131b2a !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+    height: unset !important;
+}
+
 .card {
     border: none !important;
+}
+
+#create-page .card {
+    box-shadow: none !important;
+    border-radius: 1.25em !important;
+}
+
+#create-page.card.\@low, #create-page .card.\@low , #modal-confirmation .card, #modal-success .card, .dropdown-display .card.\@low, #lang-list .dark\:\~d_neutral  {
+    background: rgba(30, 40, 54, 0.7) !important;
+    border-radius: 1.25em !important;
 }
 
 #modal-login #user-button.card {
@@ -50,8 +73,6 @@
     text-align: center !important;
     background: rgba(30, 40, 54, 0.7) !important;
     border-radius: 1.25em !important;
-    backdrop-filter: blur(5px) !important;
-    text-align: center !important;
 }
 
 #login-user, #login-password {
@@ -67,20 +88,23 @@ padding: .4em .25em !important;
 -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 
-#login-user:focus, #login-password:focus {
+#form-create input {
+    background-color: rgb(55, 65, 81) !important;
+    border: rgb(255 255 255 / 20%) solid 0.075em !important;
+    border-radius: 0.5em !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+#login-user:focus, #login-password:focus, #form-create input:focus {
     border-color: rgb(37, 99, 235) !important;
     outline: thin solid rgb(37, 99, 235) !important;
 }
 
-#login-user:hover:not(:focus), #login-password:hover:not(:focus) {
+#login-user:hover:not(:focus), #login-password:hover:not(:focus), #form-create input:hover:not(:focus) {
     border-color: rgb(156, 163, 175) !important;
 }
 
-
-
-
-
-/* Base button styles */
 .emby-button {
     display: block;
     color: #fff !important;
@@ -94,13 +118,11 @@ padding: .4em .25em !important;
     font-weight: 600 !important;
 }
 
-/* Specific styles for different button types */
 .button-submit {
     background: rgb(61, 54, 178) !important;
     border: solid rgb(117 111 226) 0.075em !important;
 }
 
-/* Hover and focus effects */
 .emby-button:hover {
     filter: brightness(1.2) !important;
 }
